@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Table, Input } from "antd";
+import { debounce } from 'lodash'; // Import debounce function from Lodash
 const { Search } = Input;
 
 function Posts() {
@@ -38,13 +39,13 @@ function Posts() {
     setCurrPage(page);
   }
 
-  const handleSearch = (value) => {
+  const handleSearch = debounce((value) => { 
     setSearchText(value);
     const filterSearch = globaldata.filter(item =>
       item.body.toLowerCase().includes(value.toLowerCase())
     );
     setpostsdata(filterSearch); 
-  }
+  }, 300); 
 
   const columns = [
     {
@@ -62,35 +63,28 @@ function Posts() {
   ];
 
   return (
-
     <div>
-
-
-    <Search
+      <Search
         placeholder="Search by body"
         allowClear
-        enterButton="Search"
         size="large"
-        onSearch={handleSearch}
+        onSearch={handleSearch} 
+        onChange={(e) => handleSearch(e.target.value)} 
       />
-
-    <div className='container'>
-  
-      <Table
-        columns={columns}
-        dataSource={postdata} 
-        loading={loading}
-        pagination={{
-          pageSize: limit,
-          total: totalPage,
-          current: currPage,
-          onChange: handlePageChange
-        }}
-      />
+      <div className='container'>
+        <Table
+          columns={columns}
+          dataSource={postdata} 
+          loading={loading}
+          pagination={{
+            pageSize: limit,
+            total: totalPage,
+            current: currPage,
+            onChange: handlePageChange
+          }}
+        />
+      </div>
     </div>
-
-    </div>
-
   )
 }
 
