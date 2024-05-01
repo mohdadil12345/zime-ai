@@ -20,7 +20,8 @@ function Posts() {
   const [loading, setLoading] = useState(false);
   const [limit, setLimit] = useState(parseInt(queryParams.get('limit')) || 15);
   const [currPage, setCurrPage] = useState(parseInt(queryParams.get('page')) || 1);
-  const [searchText, setSearchText] = useState('');
+  // const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState(queryParams.get('search') || '');
   const [selectedTags, setSelectedTags] = useState([]);
 
 
@@ -30,6 +31,9 @@ function Posts() {
     // params.set('limit', limit);
     if (selectedTags.length > 0) {
       params.set('tags', selectedTags.join(','));
+    }
+    if (searchText.trim() !== '') {
+      params.set('search', searchText.trim());
     }
     window.history.pushState({}, '', `${window.location.pathname}?${params.toString()}`);
   };
@@ -56,7 +60,7 @@ function Posts() {
   useEffect(() => {
     fetchData();
     updateURL();
-  }, [currPage, limit,selectedTags]);
+  }, [currPage, limit,searchText, selectedTags]);
 
 
 
@@ -64,8 +68,10 @@ function Posts() {
     const filterSearch = globaldata.filter(item =>
       selectedTags.length === 0 || selectedTags.every(tag => item.tags.includes(tag))
     );
-    setpostsdata(filterSearch);
-  }, [selectedTags, globaldata]);
+    setpostsdata(filterSearch.filter(item =>
+      item.body.toLowerCase().includes(searchText.toLowerCase())
+    ));
+  }, [selectedTags, globaldata, searchText]);
 
 
   const handlePageChange = (page) => {
@@ -73,24 +79,14 @@ function Posts() {
     setCurrPage(page);
   };
 
+
   const handleSearch = debounce((value) => {
     setSearchText(value);
-    const filterSearch = globaldata.filter(item =>
-      item.body.toLowerCase().includes(value.toLowerCase())
-    );
-    setpostsdata(filterSearch);
   }, 300);
+
 
   const handleTagChange = (selectedValues) => {
     setSelectedTags(selectedValues);
-    if (selectedValues.length === 0) {
-      setpostsdata(globaldata);
-    } else {
-      const filterSearch = globaldata.filter(item =>
-        selectedValues.every(tag => item.tags.includes(tag))
-      );
-      setpostsdata(filterSearch);
-    }
   };
 
   const columns = [
@@ -130,12 +126,12 @@ function Posts() {
 
       <div className="section1">
       <Select
-        mode="multiple"
-        placeholder="Filter by tags"
-        style={{ width: '100%' }}
-        onChange={handleTagChange}
-        value={selectedTags}
-      >
+            mode="multiple"
+            placeholder="Filter by tags"
+            style={{ width: '100%' }}
+            onChange={handleTagChange}
+            value={selectedTags}
+          >
         {globaldata.reduce((tags, post) => {
           post.tags.forEach(tag => {
             if (!tags.includes(tag)) {
@@ -154,6 +150,7 @@ function Posts() {
         size="large"
         onSearch={handleSearch}
         onChange={(e) => handleSearch(e.target.value)}
+        value={searchText}
       />
       </div>
 
