@@ -63,9 +63,7 @@ padding: 10px;
 .ant-table-cell{
 }
 .ant-table-thead{
-  background-color: red;
   padding: 40px;
-  border: 2px solid blue;
 }
 
 .ant-table-wrapper .ant-table-container
@@ -194,4 +192,37 @@ footer span {
   color: white;
 }
 
+
+@media only screen and (max-width: 600px) {
+
+  .navbar {
+    /* display: none; */
+  }
+
+  .footer {
+     flex-direction: column;
+     gap: 20px;
+     padding: 20px;
+     margin-top: 110px;
+   
+  }
+
+  #footerMidSec div {
+ 
+    margin-top: 0px;
+  }
+
+  #footerRight{
+   margin-top: 0px;
+  }
+
+
+  .ant-pagination {
+    width: 100%;
+    padding: 20px;
+  
+  
+  }
+
+}
 
