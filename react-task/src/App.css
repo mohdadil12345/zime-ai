@@ -8,20 +8,29 @@
 
 .navbar{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  background-color: rgb(102, 167, 224);
+  /* background-color: rgb(102, 167, 224); */
+  background-color: #021222;
   padding: 10px;
-  position: fixed;
+  /* position: fixed;
   z-index: 9999;
   top: 0px;
-  width: 100%;
+  width: 100%; */
+}
+.menu{
+  display: flex;
+  gap: 20px;
 }
 a{
   color:white;
   font-weight: bold;
   font-size: 600;
 }
+.mnbtn{
+  display: none;
+}
+
 
 a:hover{
   background-color: rgb(102, 167, 224);
@@ -144,7 +153,7 @@ select{
 
 .footer {
   margin-top: 20px;
-  background-color: rgb(102, 167, 224);
+  background-color: #18222d;
   display: flex;
   justify-content: space-around;
   color: white;
@@ -193,11 +202,45 @@ footer span {
 }
 
 
+
+
+.signpage{
+  margin-top: 60px;
+}
+
+
 @media only screen and (max-width: 600px) {
 
-  .navbar {
-    /* display: none; */
-  }
+
+  .menu{
+    position: fixed;
+    flex-direction: column;
+    background-color: #18222d;
+    padding: 20px;
+    border-radius: 4px;
+    height: 100vh;
+    z-index: 1000; 
+    top: 60px;
+    right: 0;
+    width: 200px;
+  
+    }
+    .close {
+      right: -100%;
+      transition: right 2s ;
+    }
+    .open {
+      transition: right 1s;
+    }
+    
+    .mnbtn{
+      display: block;
+    }
+  
+    .btn{
+      display: flex;
+      gap: 10px;
+    }
 
   .footer {
      flex-direction: column;
