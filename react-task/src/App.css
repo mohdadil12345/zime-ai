@@ -129,7 +129,7 @@ select{
 
 
 .ant-select-selector{
-   border: 1px solid blue;
+   border: 1px solid rgb(102, 167, 224);
    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child){

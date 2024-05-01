@@ -18,7 +18,7 @@ function Posts() {
   const [globaldata, setglobaldata] = useState([]);
   const [totalPage, setTotalPage] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [limit, setLimit] = useState(parseInt(queryParams.get('limit')) || 10);
+  const [limit, setLimit] = useState(parseInt(queryParams.get('limit')) || 15);
   const [currPage, setCurrPage] = useState(parseInt(queryParams.get('page')) || 1);
   const [searchText, setSearchText] = useState('');
   const [selectedTags, setSelectedTags] = useState([]);
@@ -27,7 +27,10 @@ function Posts() {
   const updateURL = () => {
     const params = new URLSearchParams();
     params.set('page', currPage);
-    params.set('limit', limit);
+    // params.set('limit', limit);
+    if (selectedTags.length > 0) {
+      params.set('tags', selectedTags.join(','));
+    }
     window.history.pushState({}, '', `${window.location.pathname}?${params.toString()}`);
   };
 
@@ -53,7 +56,17 @@ function Posts() {
   useEffect(() => {
     fetchData();
     updateURL();
-  }, [currPage, limit]);
+  }, [currPage, limit,selectedTags]);
+
+
+
+  useEffect(() => {
+    const filterSearch = globaldata.filter(item =>
+      selectedTags.length === 0 || selectedTags.every(tag => item.tags.includes(tag))
+    );
+    setpostsdata(filterSearch);
+  }, [selectedTags, globaldata]);
+
 
   const handlePageChange = (page) => {
     // setCurrPage(page, limit);
