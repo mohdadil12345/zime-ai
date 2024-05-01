@@ -170,9 +170,7 @@ function Posts() {
 
     </div>
 
-    <div>
-         <Footer/>
-    </div>
+    
 
 </>
 
