@@ -1,16 +1,26 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 import zime from "../assets/zime.webp"
+import { authval } from './AuthContextProvider';
 
 function Navbar() {
 
   const [show, setshow] = useState(false)
+  const { login, logout, user } = useContext(authval);
+  const navig = useNavigate()
 
   const menu_btn = () => {
     setshow(!show)
  }
  
+
+ const handle_logout = () => {
+  logout()
+  alert("logout successfull")
+  navig("/login")
+}
+
 
 
   return (
@@ -22,14 +32,17 @@ function Navbar() {
     <div className={`menu ${show ? "open" : "close" }`}>
 
         <Link to={"/"}>Posts</Link>
-        <Link to={"/signup"}>Signup</Link>
-        <Link to={"/login"}>Login</Link>
+
+        {/* {user.isAuth ? <p onClick={handle_logout}>LOGOUT</p> :  
+         <Link to={"/login"}>Login</Link>} */}
      
    
     </div>
 
     <div className="btn">
-      <button>Login</button>
+   
+      {user.isAuth ? <p onClick={handle_logout}><button>LOGOUT</button></p> :  
+         <Link to={"/login"}><button>Login</button></Link>}
     <button className="mnbtn" onClick={menu_btn}> {!show ? "🎫" : "❌" }` </button>
     </div>
   </div>  

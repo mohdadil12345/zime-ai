@@ -3,6 +3,7 @@
   margin: 0px;
   box-sizing: border-box;
   text-decoration: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 
@@ -203,6 +204,13 @@ footer span {
 }
 
 
+.btn button{
+  color: rgb(3, 0, 0);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 600;
+  cursor: pointer;
+}
 
 
 .signup, .login{
@@ -264,6 +272,7 @@ footer span {
 .signbtn:hover{
   background-color: #5f7184;
   color: white;
+  cursor: pointer
  
 }
 

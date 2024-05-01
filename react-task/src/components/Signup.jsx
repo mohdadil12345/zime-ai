@@ -51,7 +51,7 @@ const handle_form = (e) => {
           fontWeight: "600",
         },
       });
-    // nav("/login")
+    nav("/login")
     
   
 }
