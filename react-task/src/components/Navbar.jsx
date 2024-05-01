@@ -7,7 +7,6 @@ function Navbar() {
         <Link to={"/posts"}>Posts</Link>
         <Link to={"/login"}>Login</Link>
         <Link to={"/signup"}>Signup</Link>
-        <Link to={"/"}>PostsData</Link>
         <button>Login</button>
     </div>
   )
