@@ -11,7 +11,7 @@
   justify-content: space-between;
   align-items: center;
   /* background-color: rgb(102, 167, 224); */
-  background-color: #021222;
+  background-color: #18222d;
   padding: 10px;
   /* position: fixed;
   z-index: 9999;
@@ -154,6 +154,7 @@ select{
 .footer {
   margin-top: 20px;
   background-color: #18222d;
+  
   display: flex;
   justify-content: space-around;
   color: white;
@@ -204,8 +205,66 @@ footer span {
 
 
 
-.signpage{
-  margin-top: 60px;
+.signup, .login{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid  #18222d;
+  width: 400px;
+  margin: 50px auto;
+  text-align: center;
+  background-color: #26323f;
+  border-radius: 8px;
+
+}
+
+.signup h1{
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 600;
+
+}
+
+.signupform{
+  border: 3px solid  #18222d;
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  border-radius: 8px;
+  margin: 10px auto;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+   
+}
+
+.signupform input, button{
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+.signup p {
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 600;
+  cursor: pointer;
+
+}
+
+
+.signbtn{
+  cursor: pointer;
+  font-weight: bold;
+
+}
+
+.signbtn:hover{
+  background-color: #5f7184;
+  color: white;
+ 
 }
 
 
