@@ -6,7 +6,7 @@ function AllRoutes() {
   return (
     <div>
         <Routes>
-            <Route path='/posts' element={<Posts/>}/>
+            <Route path='/' element={<Posts/>}/>
         </Routes>
     </div>
   )

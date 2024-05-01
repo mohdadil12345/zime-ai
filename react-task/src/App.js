@@ -1,4 +1,4 @@
-// import { Button } from 'antd';
+
 import './App.css';
 import AllRoutes from './components/AllRoutes';
 import Navbar from './components/Navbar';
@@ -11,7 +11,7 @@ function App() {
       <AllRoutes/>
     
 
-      {/* <Button type="primary">Click</Button> */}
+
 
     </div>
   );

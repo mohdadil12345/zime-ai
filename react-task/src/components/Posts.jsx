@@ -1,20 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Table, Input, Radio, Select } from "antd";
 import { debounce } from 'lodash';
+import Footer from './Footer';
+
 
 const { Search } = Input;
 const { Option } = Select;
 
 function Posts() {
+
+  // Get query parameters from the URL
+  const queryParams = new URLSearchParams(window.location.search);
+
+
   const api = "https://dummyjson.com/posts";
   const [postdata, setpostsdata] = useState([]);
   const [globaldata, setglobaldata] = useState([]);
   const [totalPage, setTotalPage] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [limit, setLimit] = useState(10);
-  const [currPage, setCurrPage] = useState(1);
+  const [limit, setLimit] = useState(parseInt(queryParams.get('limit')) || 10);
+  const [currPage, setCurrPage] = useState(parseInt(queryParams.get('page')) || 1);
   const [searchText, setSearchText] = useState('');
   const [selectedTags, setSelectedTags] = useState([]);
+
+
+  const updateURL = () => {
+    const params = new URLSearchParams();
+    params.set('page', currPage);
+    params.set('limit', limit);
+    window.history.pushState({}, '', `${window.location.pathname}?${params.toString()}`);
+  };
+
+
 
   const fetchData = async () => {
     setLoading(true);
@@ -22,6 +39,7 @@ function Posts() {
     try {
       let res = await fetch(`${api}?skip=${skip}&limit=${limit}`);
       let data = await res.json();
+      console.log("data", data)
       setpostsdata(data.posts);
       setglobaldata(data.posts);
       setTotalPage(data.total);
@@ -34,9 +52,11 @@ function Posts() {
 
   useEffect(() => {
     fetchData();
-  }, [currPage]);
+    updateURL();
+  }, [currPage, limit]);
 
   const handlePageChange = (page) => {
+    // setCurrPage(page, limit);
     setCurrPage(page);
   };
 
@@ -90,7 +110,12 @@ function Posts() {
   ];
 
   return (
-    <div>
+
+<>
+
+    <div className='main_cont'>
+
+      <div className="section1">
       <Select
         mode="multiple"
         placeholder="Filter by tags"
@@ -117,6 +142,7 @@ function Posts() {
         onSearch={handleSearch}
         onChange={(e) => handleSearch(e.target.value)}
       />
+      </div>
 
       <div className='container'>
         <Table
@@ -131,7 +157,15 @@ function Posts() {
           }}
         />
       </div>
+
     </div>
+
+    <div>
+         <Footer/>
+    </div>
+
+</>
+
   );
 }
 
