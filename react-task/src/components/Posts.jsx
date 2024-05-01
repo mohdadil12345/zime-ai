@@ -9,7 +9,7 @@ const { Option } = Select;
 
 function Posts() {
 
-  // Get query parameters from the URL
+
   const queryParams = new URLSearchParams(window.location.search);
 
 
