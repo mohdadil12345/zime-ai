@@ -328,6 +328,11 @@ label {
  
 }
 
+/* ant-table-pagination ant-table-pagination-right css-dev-only-do-not-override-kghr11 */
+.ant-pagination {
+  min-width: 400px;
+}
+
 
 @media only screen and (max-width: 610px) {
 

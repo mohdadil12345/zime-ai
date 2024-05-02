@@ -8,7 +8,7 @@ import { authval } from './AuthContextProvider';
 function Navbar() {
 
   const [show, setshow] = useState(false)
-  const { login, logout, user } = useContext(authval);
+  // const { login, logout, user } = useContext(authval);
   const navig = useNavigate()
   
 
@@ -17,40 +17,40 @@ function Navbar() {
  }
  
 
- const handle_logout = () => {
-  logout()
-  toast.success("Logout Successfull!", {
-    style: {
-      borderRadius: "50px",
-      background: "#000428",
-      color: "#ffffff",
-      padding: "1rem 1.5rem",
-      fontWeight: "600",
-    },
-  });
-  navig("/login")
-  setshow(!show)
-}
+//  const handle_logout = () => {
+//   logout()
+//   toast.success("Logout Successfull!", {
+//     style: {
+//       borderRadius: "50px",
+//       background: "#000428",
+//       color: "#ffffff",
+//       padding: "1rem 1.5rem",
+//       fontWeight: "600",
+//     },
+//   });
+//   navig("/login")
+//   setshow(!show)
+// }
 
-const handle_alert = () => {
-    if(!user.isAuth ){
-      toast.error("Please login first", {
-        style: {
-          borderRadius: "50px",
-          background: "#000428",
-          color: "#ffffff",
-          padding: "1rem 1.5rem",
-          fontWeight: "600",
-        },
+// const handle_alert = () => {
+//     if(!user.isAuth ){
+//       toast.error("Please login first", {
+//         style: {
+//           borderRadius: "50px",
+//           background: "#000428",
+//           color: "#ffffff",
+//           padding: "1rem 1.5rem",
+//           fontWeight: "600",
+//         },
 
-      });
-      navig("/login")
-      setshow(!show)
-    } else if(user.isAuth ){
-      navig("/")
-      setshow(!show)
-    }
-}
+//       });
+//       navig("/login")
+//       setshow(!show)
+//     } else if(user.isAuth ){
+//       navig("/")
+//       setshow(!show)
+//     }
+// }
 
 
 
@@ -63,17 +63,17 @@ const handle_alert = () => {
 
     <div className={`menu ${show ? "open" : "close" }`}>
 
-        <Link style={{color:"white"}} onClick={handle_alert}>Posts</Link>
+        <Link to={"/"} style={{color:"white"}}>Posts</Link>
 
-        {user.isAuth &&  <div className='name'>
+        {/* {user.isAuth &&  <div className='name'>
           <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="" />
           <span>{user.username}</span>
-        </div> }
+        </div> } */}
 
     
-        {user.isAuth ? <button id='btnsame' onClick={handle_logout}>LOGOUT</button> :  
+        {/* {user.isAuth ? <button id='btnsame' >LOGOUT</button> :  
          <Link to={"/login"}><button id='btnsame' >Login</button></Link>}
-     
+      */}
    
     </div>
 

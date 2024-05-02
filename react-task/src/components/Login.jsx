@@ -53,7 +53,7 @@ function Login() {
             fontWeight: "600",
           },
         });
-        login(checkauth)
+        // login(checkauth)
 
         nav(location.state?.from || "/");
       } else {

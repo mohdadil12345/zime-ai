@@ -9,13 +9,10 @@ function AllRoutes() {
   return (
     <div>
         <Routes>
-            <Route path='/' element={  <PrivateRoutes>
+            <Route path='/' element={<Posts/>}/>
 
-              <Posts/>
-            </PrivateRoutes> }/>
-
-            <Route path='/login' element={<Login/>}/>
-            <Route path='/signup' element={<Signup/>}/>
+            {/* <Route path='/login' element={<Login/>}/> */}
+            {/* <Route path='/signup' element={<Signup/>}/> */}
            
         </Routes>
     </div>
