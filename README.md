@@ -24,11 +24,13 @@ https://github.com/mohdadil12345/zime-ai
 
 
 
-### Developer-side features
+### features
 
-- Fully Responsive websites in mobile view.
+- sorting filtering pagination seacrh functionality applied
+- sortin filtering pagination and search funcionality work simultaneously with dynamic url applied
+- Fully Responsive websites in mobile viewa dn tablet view
 - For designing used css.
-- Ant Design framework used : .
+- Ant Design framework used
 
 
 ## Tools and Technologies
