@@ -4,8 +4,14 @@ Basic task Application
 # Preview :https://zime-ai.vercel.app/
 
 ## Screenshots
-## HomePage mobile view
-![Screenshot 1](./todo_application/src/assets/screenshots/homepage.png)
+## Top Section
+![Screenshot 1](./react-task/src/assets/section1.png)
+# Footer section
+![Screenshot 1](./react-task/src/assets/footer.png)
+# Top Section mobile view
+![Screenshot 1](./react-task/src/assets/mbilesection1.png)
+#  Footer sectionmobile view
+![Screenshot 1](./react-task/src/assets/footermbile.png)
 
 
 ## Deployment
