@@ -92,10 +92,6 @@ padding: 10px;
 }
 
 
-select{
-  /* width: 100px; */
-
-}
 
 
 .ant-pagination {
@@ -431,7 +427,7 @@ label {
     }
     .close {
       right: -100%;
-      transition: right 2s ;
+      transition: right 2s  ;
     }
     .open {
       transition: right 1s;
