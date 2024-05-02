@@ -13,7 +13,7 @@
   align-items: center;
   /* background-color: rgb(102, 167, 224); */
   background-color: #18222d;
-  padding: 10px;
+  padding: 10px 20px;
   /* position: fixed;
   z-index: 9999;
   top: 0px;
@@ -22,13 +22,14 @@
 .menu{
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 a{
   color:white;
   font-weight: bold;
   font-size: 600;
 }
-.mnbtn{
+.btn{
   display: none;
 }
 
@@ -39,11 +40,13 @@ a:hover{
 border-radius: 2px;
 }
 
-button{
-  padding: 8px;
+#btnsame{
   border: none;
   border-radius: 4px;
-  width: 100px;
+  color: black;
+  font-weight: bold;
+  font-size: 600;
+  padding: 8px 10px;
 }
 
 
@@ -208,8 +211,36 @@ footer span {
   color: rgb(3, 0, 0);
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bold;
-  font-size: 600;
+  /* font-size: 600; */
   cursor: pointer;
+}
+
+
+.name{
+  color: white;
+  display: flex;
+   justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(238, 238, 238);
+  border-left: none;
+  border-top-left-radius: 30%;
+  border-bottom-left-radius: 30%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+}
+.name span{
+  color: rgb(255, 255, 255);
+  display: flex;
+   justify-content: center;
+  align-items: center;
+  border-left: none;
+  padding: 0px 10px;
+}
+
+.name img{
+  width: 34px;
+  height: 36px;
 }
 
 
