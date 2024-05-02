@@ -67,7 +67,7 @@ const handle_alert = () => {
 
         {user.isAuth &&  <div className='name'>
           <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="" />
-          <span>Adil</span>
+          <span>{user.username}</span>
         </div> }
 
     

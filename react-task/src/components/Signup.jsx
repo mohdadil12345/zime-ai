@@ -57,6 +57,10 @@ const handle_form = (e) => {
 }
 
 
+const gotologinform = () => {
+  nav("/login")
+}
+
 const {username, email, password} = formdata
 
   return (
@@ -66,14 +70,22 @@ const {username, email, password} = formdata
 
 
       <form onSubmit={(e) => handle_form(e)} className="signupform">
+      <label>username :</label>
         <input onChange={(e) => handle_chnage(e)}  name='username' value={username} type="text" placeholder='username' />
-        <input onChange={(e) => handle_chnage(e)} name='email' value={email} type="text" placeholder='email' />
+
+      <label>Email : </label>
+        <input onChange={(e) => handle_chnage(e)} name='email' value={email} type="email" placeholder='email' />
+
+      <label>Password :</label>
         <input onChange={(e) => handle_chnage(e)} name='password' value={password} type="password" placeholder='password' />
 
-         <div>
+         <div className='signbtn_div'>
          <button className='signbtn' type='submit'>SIGNUP</button>
          </div>
       </form>
+      <p onClick={gotologinform}>
+       Already Register Please login
+      </p>
     </div>
 
   )

@@ -244,6 +244,30 @@ footer span {
 }
 
 
+
+.signup h1{
+  color: white;
+  font-weight: bold;
+  font-size: 600;
+  text-align: center;
+
+}
+.signup p{
+  color: white;
+  font-weight: bold;
+  font-size: 600;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+label {
+  color: white;
+  font-size: 600;
+  font-weight: bold;
+}
+
+
 .signup, .login{
   display: flex;
   flex-direction: column;
@@ -251,17 +275,8 @@ footer span {
   border: 1px solid  #18222d;
   width: 400px;
   margin: 50px auto;
-  text-align: center;
   background-color: #26323f;
   border-radius: 8px;
-
-}
-
-.signup h1{
-  color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bold;
-  font-size: 600;
 
 }
 
@@ -284,15 +299,15 @@ footer span {
   border: none;
 }
 
-.signup p {
-  color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bold;
-  font-size: 600;
-  cursor: pointer;
 
+.signbtn_div, .logindiv{
+  width: max-content;
+  margin: auto;
 }
 
+.logindiv button, .signbtn_div button{
+  padding: 10px 30px;
+}
 
 .signbtn{
   cursor: pointer;

@@ -81,6 +81,7 @@ function Login() {
       <h1>Login</h1>
 
       <form onSubmit={(e) => handle_form(e)} className="signupform">
+      <label>Email :  </label>
         <input
           onChange={(e) => handle_chnage(e)}
           name="email"
@@ -88,6 +89,7 @@ function Login() {
           type="text"
           placeholder="email"
         />
+            <label>Password :  </label>
         <input
           onChange={(e) => handle_chnage(e)}
           name="password"
@@ -96,7 +98,7 @@ function Login() {
           placeholder="password"
         />
 
-        <div>
+        <div className="logindiv">
           <button type="submit">Login</button>
         </div>
       </form>
