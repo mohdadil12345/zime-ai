@@ -33,7 +33,7 @@ function Login() {
 
     // console.log( formdata.password)
 
-    let lsadata = JSON.parse(localStorage.getItem("signdata"));
+    let lsadata = JSON.parse(localStorage.getItem("regData"));
 
     if (lsadata) {
       console.log(lsadata);
