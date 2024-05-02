@@ -29,7 +29,7 @@ function Login() {
     e.preventDefault();
     // console.log("adil")
     // console.log(formdata)
-    setformdata(intistate);
+    // setformdata(intistate);
 
     // console.log( formdata.password)
 

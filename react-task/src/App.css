@@ -261,6 +261,12 @@ footer span {
 
 }
 
+.signupform span{
+  color: red;
+  font-weight: bold;
+  font-size: 600;
+}
+
 label {
   color: white;
   font-size: 600;
@@ -323,7 +329,7 @@ label {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 610px) {
 
 
   .menu{
@@ -380,6 +386,16 @@ label {
   
   
   }
+
+}
+
+
+@media only screen and (max-width: 910px) {
+
+  .footer {
+    margin-top: 140px;
+  
+ }
 
 }
 
