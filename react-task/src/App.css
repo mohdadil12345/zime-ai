@@ -409,7 +409,7 @@ label {
 
 @media only screen and (max-width: 610px) {
   .container{
-    overflow-x: hidden;
+    overflow-x: scroll;
   }
 
   .navbar{
