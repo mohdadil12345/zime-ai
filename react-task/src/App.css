@@ -9,10 +9,11 @@
 
 .navbar{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   /* background-color: rgb(102, 167, 224); */
-  background-color: #18222d;
+  /* background-color: #18222d; */
+  background-color: rgb(102, 167, 224);
   padding: 10px 20px;
   /* position: fixed;
   z-index: 9999;
@@ -97,13 +98,13 @@ padding: 10px;
 
 select{
   width: 200px;
-  
+
 }
 
 
 .ant-pagination {
   padding: 10px;
-  border: 1px solid rgb(66, 80, 192);
+  border: 1px solid rgb(127, 178, 222);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 8px;
 
@@ -136,29 +137,58 @@ select{
   display: flex;
   padding: 10px;
   gap: 30px;
-  margin-top: 60px;
+  margin-top: 40px;
+  /* background-color: rgb(102, 167, 224); */
 
 }
 
 
 .ant-select-selector{
-   border: 1px solid rgb(102, 167, 224);
+   border: 1px solid rgb(127, 178, 222);
    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child){
    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.ant-input-search .ant-input-group{
+  background-color:  rgb(127, 178, 222);
+  padding: 4px;
+  border-radius: 4px;
+}
 
 
+/* css-dev-only-do-not-override-kghr11 ant-select-multiple ant-select-show-arrow ant-select-show-search */
 
+.ant-select-outlined {
+  background-color:  rgb(127, 178, 222);
+  padding: 4px;
+  border-radius: 4px;
+}
 
+/* dev-only-do-not-override-kghr11).ant-table-wrapper .ant-table-tbody >tr >td  */
 
+.dev-only-do-not-override-kghr11.ant-table-wrapper {
+  border: 1px solid rgb(3, 3, 3);
+}
+.ant-table-tbody >tr >td {
+  background-color:  rgb(233, 237, 241);
+}
+
+.ant-table-wrapper {
+  /* background-color: rgb(102, 167, 224);
+  padding: 10px;
+  border-radius: 4px; */
+}
+
+.ant-table-cell span {
+   color:rgb(9, 50, 86);
+}
 
 
 .footer {
   margin-top: 20px;
-  background-color: #18222d;
-  
+  /* background-color: #18222d; */
+  background-color: rgb(102, 167, 224);
   display: flex;
   justify-content: space-around;
   color: white;
@@ -336,6 +366,9 @@ label {
 
 @media only screen and (max-width: 610px) {
 
+  .navbar{
+    justify-content: space-between;
+  }
 
   .menu{
     position: fixed;
