@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from "react-hot-toast";
 
-import zime from "../assets/zime.webp"
+import zime from "../assets/download.png"
 import { authval } from './AuthContextProvider';
 
 function Navbar() {
@@ -59,6 +59,7 @@ function Navbar() {
       
     <div className="logo">
         <img src={zime} alt="" />
+        <p>Zime</p>
     </div>
 
     <div className={`menu ${show ? "open" : "close" }`}>

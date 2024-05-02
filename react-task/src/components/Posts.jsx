@@ -43,6 +43,7 @@ function Posts() {
   const fetchData = async () => {
     setLoading(true);
     const skip = (currPage - 1) * limit;
+
     try {
       let res = await fetch(`${api}?skip=${skip}&limit=${limit}`);
       let data = await res.json();
@@ -89,6 +90,7 @@ function Posts() {
     setSelectedTags(selectedValues);
   };
 
+
   const columns = [
     {
       title: 'ID',
@@ -116,14 +118,41 @@ function Posts() {
         </span>
       ),
     },
+    {
+      title: 'Reactions',
+      dataIndex: 'reactions',
+    },
   ];
 
+
+
+  // handle_sort
+  const handle_sort = (e) => {
+    const selectedOrder = e.target.value;
+    const params = new URLSearchParams(window.location.search);
+    params.set('sortOrder', selectedOrder); // Update the sortOrder parameter in the URL
+    window.history.pushState({}, '', `${window.location.pathname}?${params.toString()}`);
+  
+    const sortedDataSource = [...postdata];
+    if (selectedOrder === "asc") {
+      sortedDataSource.sort((a, b) => a.reactions - b.reactions);
+    } else if (selectedOrder === "desc") {
+      sortedDataSource.sort((a, b) => b.reactions - a.reactions);
+    }
+  
+    setpostsdata(sortedDataSource);
+  }
   return (
 
 <>
 
     <div className='main_cont'>
 
+
+
+
+
+ 
       <div className="section1">
       <Select
             mode="multiple"
@@ -144,6 +173,20 @@ function Posts() {
         ))}
       </Select>
 
+         
+      <div className="order">
+        <div className="box1">
+        <label  htmlFor="ascRadio">ASC</label>
+      <input id="ascRadio" name="sortOrder" type="radio" value="asc" onClick={handle_sort} />
+        </div>
+
+        <div className="box2">
+        <label  htmlFor="descRadio">DESC</label>
+      <input id="descRadio" name="sortOrder" type="radio" value="desc" onClick={handle_sort} />
+        </div>
+     
+    </div>
+
       <Search
         placeholder="Search by body"
         allowClear
@@ -152,7 +195,21 @@ function Posts() {
         onChange={(e) => handleSearch(e.target.value)}
         value={searchText}
       />
+
+
+   
+
+
+
       </div>
+
+
+
+
+
+
+
+
 
       <div className='container'>
         <Table
