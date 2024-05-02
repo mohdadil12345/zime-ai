@@ -4,8 +4,10 @@ Basic task Application
 # Preview :https://zime-ai.vercel.app/
 
 ## Screenshots
-## HomePage mobile view
+## section1
 ![Screenshot 1](./react-task/src/assets/section1.png)
+# section2
+![Screenshot 1](./react-task/src/assets/footer.png)
 
 
 ## Deployment
