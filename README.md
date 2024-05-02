@@ -5,7 +5,7 @@ Basic task Application
 
 ## Screenshots
 ## HomePage mobile view
-![Screenshot 1](./todo_application/src/assets/screenshots/homepage.png)
+![Screenshot 1](./react-task/src/assets/section1.png)
 
 
 ## Deployment
