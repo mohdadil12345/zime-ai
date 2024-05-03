@@ -3,7 +3,7 @@ Basic task Application
 
 # Preview :https://zime-ai.vercel.app/
 
-# video : ![image](https://github.com/mohdadil12345/zime-ai/assets/119355639/1c2d7810-481e-4e7b-81a4-628963ea2a34)
+# video : https://drive.google.com/file/d/1dpG8FK9CBzUSRGW6WlwEaBA9Puc3RaCv/view?usp=drive_link
 
 
 ## Screenshots
